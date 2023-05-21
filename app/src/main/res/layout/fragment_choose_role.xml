@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary"
+    tools:context=".fragments.auth.ChooseRoleFragment">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:orientation="vertical"
+        app:cardCornerRadius="15dp"
+        android:elevation="10dp"
+        android:background="@drawable/background_corner_bottom_left_right">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/role_1" />
+
+        <ImageView
+            android:layout_width="111dp"
+            android:layout_height="107dp"
+            android:layout_gravity="center"
+            android:contentDescription="TODO"
+            android:src="@drawable/logo_no_background" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:text="Bạn muốn sử dụng chức năng cho?"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/btn_choose_role_teacher"
+            style="@style/NormalButton"
+            android:layout_marginTop="16dp"
+            android:text="@string/teacher" />
+
+        <Button
+            android:id="@+id/btn_choose_role_parent"
+            style="@style/OutlineButton"
+            android:layout_marginTop="16dp"
+            android:text="@string/parent" />
+    </LinearLayout>
+</RelativeLayout>

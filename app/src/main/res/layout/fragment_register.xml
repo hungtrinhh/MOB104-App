@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.auth.RegisterFragment"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/bg_primary">
+
+    <ImageButton
+        android:id="@+id/btn_register_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/ic_round_arrow_back_ios_new_24"/>
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Điền thông tin đăng ký"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textAlignment="textStart"
+        android:layout_marginVertical="16dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ed_layout_register_full_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:hintEnabled="false">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_register_full_name"
+            style="@style/EditText"
+            android:hint="@string/full_name" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ed_layout_register_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:hintEnabled="false"
+        android:layout_marginVertical="24dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_register_phone_number"
+            style="@style/EditText"
+            android:inputType="number|phone"
+            android:hint="@string/phone_nubmer" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ed_layout_register_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:hintEnabled="false"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_register_password"
+            style="@style/EditText"
+            android:hint="@string/password"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ed_layout_register_repassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:hintEnabled="false"
+        android:layout_marginVertical="24dp"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_register_repassword"
+            style="@style/EditText"
+            android:hint="@string/repassword"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_register_submit"
+        style="@style/NormalButton"
+        android:text="@string/submit"
+        android:layout_marginVertical="24dp"/>
+
+</LinearLayout>
