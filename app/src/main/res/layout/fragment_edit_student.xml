@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.teacher.EditStudentFragment"
+    android:background="@color/bg_primary">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="?android:actionBarSize"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="8dp"
+            android:paddingTop="24dp">
+
+            <EditText
+                android:id="@+id/ed_student_name"
+                style="@style/EditText"
+                android:hint="Họ tên học sinh"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <EditText
+                    android:id="@+id/ed_student_dob"
+                    android:layout_width="0dp"
+                    style="@style/EditText"
+                    android:layout_weight="1"
+                    android:hint="Ngày sinh"
+                    android:inputType="none"
+                    android:textIsSelectable="true"
+                    android:focusable="false"
+                    android:longClickable="false"
+                    android:layout_marginEnd="8dp" />
+
+                <Spinner
+                    android:id="@+id/sp_student_gender"
+                    android:layout_width="0dp"
+                    style="@style/EditText"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:spinnerMode="dropdown"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Điểm kỳ 1"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="16dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Điểm DGTX: "
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+
+                <EditText
+                    android:id="@+id/ed_regular_1_term_1"
+                    android:layout_width="60dp"
+                    style="@style/EditText"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:maxLength="4"
+                    android:textSize="14sp"
+                    android:hint="0.0"
+                    android:layout_marginHorizontal="8dp"/>
+
+                <EditText
+                    android:id="@+id/ed_regular_2_term_1"
+                    android:layout_width="60dp"
+                    style="@style/EditText"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:maxLength="4"
+                    android:textSize="14sp"
+                    android:hint="0.0"
+                    android:layout_marginHorizontal="8dp"/>
+
+                <EditText
+                    android:id="@+id/ed_regular_3_term_1"
+                    android:layout_width="60dp"
+                    style="@style/EditText"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:maxLength="4"
+                    android:textSize="14sp"
+                    android:hint="0.0"
+                    android:layout_marginHorizontal="8dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Điểm giữa kỳ: "
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+
+                <EditText
+                    android:id="@+id/ed_midterm_term_1"
+                    android:layout_width="60dp"
+                    style="@style/EditText"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:maxLength="4"
+                    android:textSize="14sp"
+                    android:hint="0.0"
+                    android:layout_marginHorizontal="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cuối kỳ: "
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="18dp"/>
+
+                <EditText
+                    android:id="@+id/ed_final_term_1"
+                    android:layout_width="60dp"
+                    style="@style/EditText"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:maxLength="4"
+                    android:textSize="14sp"
+                    android:hint="0.0"
+                    android:layout_marginHorizontal="8dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Điểm kỳ 2"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="16dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Điểm DGTX: "
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+
+                <EditText
+                    android:id="@+id/ed_regular_1_term_2"
+                    android:layout_width="60dp"
+                    style="@style/EditText"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:maxLength="4"
+                    android:textSize="14sp"
+                    android:hint="0.0"
+                    android:layout_marginHorizontal="8dp"/>
+
+                <EditText
+                    android:id="@+id/ed_regular_2_term_2"
+                    android:layout_width="60dp"
+                    style="@style/EditText"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:maxLength="4"
+                    android:textSize="14sp"
+                    android:hint="0.0"
+                    android:layout_marginHorizontal="8dp"/>
+
+                <EditText
+                    android:id="@+id/ed_regular_3_term_2"
+                    android:layout_width="60dp"
+                    style="@style/EditText"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:maxLength="4"
+                    android:textSize="14sp"
+                    android:hint="0.0"
+                    android:layout_marginHorizontal="8dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Điểm giữa kỳ: "
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+
+                <EditText
+                    android:id="@+id/ed_midterm_term_2"
+                    android:layout_width="60dp"
+                    style="@style/EditText"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:maxLength="4"
+                    android:textSize="14sp"
+                    android:hint="0.0"
+                    android:layout_marginHorizontal="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cuối kỳ: "
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="18dp"/>
+
+                <EditText
+                    android:id="@+id/ed_final_term_2"
+                    android:layout_width="60dp"
+                    style="@style/EditText"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:maxLength="4"
+                    android:textSize="14sp"
+                    android:hint="0.0"
+                    android:layout_marginHorizontal="8dp"/>
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                android:layout_marginVertical="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <EditText
+                    android:id="@+id/ed_parent_phone_number"
+                    style="@style/EditText"
+                    android:layout_weight="3"
+                    android:hint="Số điện thoại phụ huynh"
+                    android:inputType="number|phone"/>
+
+                <Button
+                    android:id="@+id/btn_parent_search_phone_number"
+                    style="@style/NormalButton"
+                    android:layout_weight="7"
+                    android:textSize="16sp"
+                    android:text="Tìm SĐT"
+                    android:layout_marginStart="8dp"/>
+
+            </LinearLayout>
+
+
+
+            <EditText
+                android:id="@+id/ed_parent_name"
+                style="@style/EditText"
+                android:hint="Họ và tên phụ huynh"
+                android:layout_marginVertical="16dp"
+                android:enabled="false"/>
+
+            <EditText
+                android:id="@+id/ed_parent_dob"
+                style="@style/EditText"
+                android:hint="Ngày sinh phụ huynh"
+                android:inputType="none"
+                android:textIsSelectable="true"
+                android:focusable="false"
+                android:longClickable="false"
+                android:enabled="false" />
+
+            <EditText
+                android:id="@+id/ed_parent_email"
+                style="@style/EditText"
+                android:hint="Email phụ huynh"
+                android:inputType="textEmailAddress"
+                android:enabled="false"
+                android:layout_marginVertical="16dp"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/bg_toolbar"
+        android:elevation="20dp">
+
+        <ImageView
+            android:id="@+id/img_edit_student_back"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_gravity="start"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:padding="12dp"
+            android:src="@drawable/ic_baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/tv_edit_student_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm học sinh"
+            android:textColor="@color/blue_primary"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_edit_student_save"
+            style="@style/ToolbarButton"
+            android:layout_gravity="end"
+            android:layout_marginVertical="4dp"
+            android:layout_marginEnd="16dp"
+            android:text="Lưu"
+            android:enabled="false"/>
+    </androidx.appcompat.widget.Toolbar>
+
+</FrameLayout>
