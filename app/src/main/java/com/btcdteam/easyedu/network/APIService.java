@@ -50,6 +50,15 @@ public interface APIService {
     @DELETE("classuser/{idStudent}/{idClass}")
     Call<JsonObject> deleteStudentById(@Path("idStudent") String id, @Path("idClass") int idClass);
 
+    @DELETE("classroom/{id}")
+    Call<JsonObject> deleteClassRoomById(@Path("id") int id);
+
+    @GET("classuser/getinfo/{id}/{idClass}")
+    Call<JsonObject> getInfoParentAndStudent(@Path("id") String id, @Path("idClass") int idClass);
+
+    @PATCH("classroom")
+    Call<JsonObject> updateClassRoomById(@Body Classroom classroom);
+
     @POST("student/import")
     Call<JsonObject> importStudentData(@Body SyncBody body);
 
@@ -62,6 +71,14 @@ public interface APIService {
     @POST("parent")
     Call<JsonObject> createParent(@Body Parent parent);
 
+    @PATCH("teacher")
+    Call<JsonObject> editTeacher(@Body JsonObject teacher);
+
+    @GET("teacher/{id}")
+    Call<JsonObject> getTeacherById(@Path("id") int id);
+
+    @POST("auth/change-password")
+    Call<JsonObject> changePassword(@Body JsonObject teacher);
 
     @GET("student/{studentId}/{classroomId}")
     Call<JsonObject> getStudentById(@Path("studentId") String studentId, @Path("classroomId") int ClassroomId);
@@ -72,6 +89,32 @@ public interface APIService {
     @PATCH("classuser/score/import")
     Call<JsonObject> importStudentScore(@Body RequestBody body);
 
+    @PATCH("parent")
+    Call<JsonObject> updateParent(@Body Parent parent);
 
+    @POST("feedback")
+    Call<JsonObject> sendFeedback(@Body Feedback feedback);
+
+    @POST("feedback/multi")
+    Call<JsonObject> sendMultiFeedback(@Body JsonObject body);
+
+    @Headers({
+            "Authorization: key=AAAAPROn9MM:APA91bHk2VbqYEpKdm9wdYJNm1-SrlRsgityfCotN5wo5eh6gNeVv2HPy1j8wfhN3i4LUBCB4q4aUZOSSRNlTEfZqEpabqHT6bZTzl8rgMT87HNGUe2CPuhFOF5afX9vKkAhZgk9QcRh",
+            "Content-Type: application/json"
+    })
+    @POST("fcm/send")
+    Call<JsonObject> pushNotification(@Body FCMBodyRequest body);
+
+    @GET("student/parent/{parentId}")
+    Call<JsonObject> getListStudentByParent(@Path("parentId") String id);
+
+    @GET("parent/analytics/student/{studentId}")
+    Call<JsonObject> getScoreWithClass(@Path("studentId") String id);
+
+    @GET("feedback/student/{studentId}")
+    Call<JsonObject> getFeedbackByStudent(@Path("studentId") String id);
+
+    @GET("parent/analytics/student/{studentId}/{classId}")
+    Call<JsonObject> getScoreByStudentAndClass(@Path("studentId") String studentId, @Path("classId") String classId);
 
 }
