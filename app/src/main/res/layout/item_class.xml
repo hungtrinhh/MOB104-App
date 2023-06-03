@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_class"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:layout_margin="8dp"
+    android:elevation="20dp"
+    app:cardCornerRadius="30dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:background="?android:selectableItemBackground">
+
+        <RelativeLayout
+            android:id="@+id/left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tv_item_class_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:maxLines="1"
+                android:text="Ten lop 1"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_item_class_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_item_class_name"
+                android:layout_marginVertical="8dp"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:text="Noi dung mo ta" />
+
+            <TextView
+                android:id="@+id/tv_item_class_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:text="Hoc sinh: " />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/img_item_class_template"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:padding="8dp"
+            android:layout_weight="6"
+            android:src="@drawable/cry"/>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
