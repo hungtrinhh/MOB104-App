@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_update_class"
+        android:title="Cập nhật lớp" />
+    <item
+        android:id="@+id/menu_delete_class"
+        android:title="Xoá lớp" />
+</menu>
