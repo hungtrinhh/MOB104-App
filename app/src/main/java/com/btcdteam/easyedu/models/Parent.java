@@ -1,9 +1,24 @@
 package com.btcdteam.easyedu.models;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.UUID;
 
 public class Parent {
-    private String id, name, email, password, dob, phone, fcmToken;
+    @SerializedName("parent_id")
+    private String id;
+    @SerializedName("parent_name")
+    private String name;
+    @SerializedName("parent_email")
+    private String email;
+    private String password;
+    @SerializedName("parent_dob")
+    private String dob;
+    @SerializedName("parent_fcmtoken")
+    private String fcmToken;
+    @SerializedName("parent_phone")
+    private String phone;
+
 
     public Parent(String name, String phone) {
         this.id = UUID.randomUUID().toString();
@@ -75,6 +90,7 @@ public class Parent {
     public void setFcmToken(String fcmToken) {
         this.fcmToken = fcmToken;
     }
+
 
     @Override
     public String toString() {
