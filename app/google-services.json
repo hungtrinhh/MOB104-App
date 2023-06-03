@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "262322779331",
+    "project_id": "easyedu-android",
+    "storage_bucket": "easyedu-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262322779331:android:a5e18245e8f36536995e76",
+        "android_client_info": {
+          "package_name": "com.btcdteam.easyedu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262322779331-i98l22nvtd5argonr22p8f1prcb0fre9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.btcdteam.easyedu",
+            "certificate_hash": "a8c10f1079e9c23289261bfbd4826907dde9df6d"
+          }
+        },
+        {
+          "client_id": "262322779331-ajuaqvtf6jea13qb9qa7at9oplibkqt7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCak_uj2umnsfQlJpU09c5CU5KJU-sGgzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262322779331-ajuaqvtf6jea13qb9qa7at9oplibkqt7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
