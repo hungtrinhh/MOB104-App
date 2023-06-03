@@ -9,7 +9,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8aeb57ab-6936-440b-99dc-22b08499e83d" name="Changes" comment="">
+    <list default="true" id="8aeb57ab-6936-440b-99dc-22b08499e83d" name="Changes" comment="feature classroom">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/btcdteam/easyedu/adapter/teacher/ClassroomAdapter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/btcdteam/easyedu/fragments/auth/teacher/ClassInfoFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/btcdteam/easyedu/fragments/auth/teacher/CreateClassFragment.java" afterDir="false" />
