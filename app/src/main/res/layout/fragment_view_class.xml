@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_primary"
-    tools:context=".fragments.auth.teacher.ViewClassFragment">
+    tools:context=".fragments.teacher.ViewClassFragment">
 
     <FrameLayout
         android:layout_width="match_parent"

@@ -16,6 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.concurrent.Callable;
 
@@ -66,11 +67,32 @@ public class ScoreFileUtils {
                         row.createCell(1).setCellValue(detail.getStudentId());
                         row.createCell(2, CellType.NUMERIC).setCellValue(detail.getClassroomId());
                         row.createCell(3).setCellValue(detail.getName());
-                        row.createCell(4, CellType.NUMERIC).setBlank();
-                        row.createCell(5, CellType.NUMERIC).setBlank();
-                        row.createCell(6, CellType.NUMERIC).setBlank();
-                        row.createCell(7, CellType.NUMERIC).setBlank();
-                        row.createCell(8, CellType.NUMERIC).setBlank();
+
+                        if (detail.getRegularScore1() == null) {
+                            row.createCell(4, CellType.NUMERIC).setBlank();
+                        } else {
+                            row.createCell(4, CellType.NUMERIC).setCellValue(new BigDecimal(String.valueOf(detail.getRegularScore1())).doubleValue());
+                        }
+                        if (detail.getRegularScore2() == null) {
+                            row.createCell(5, CellType.NUMERIC).setBlank();
+                        } else {
+                            row.createCell(5, CellType.NUMERIC).setCellValue(new BigDecimal(String.valueOf(detail.getRegularScore2())).doubleValue());
+                        }
+                        if (detail.getRegularScore3() == null) {
+                            row.createCell(6, CellType.NUMERIC).setBlank();
+                        } else {
+                            row.createCell(6, CellType.NUMERIC).setCellValue(new BigDecimal(String.valueOf(detail.getRegularScore3())).doubleValue());
+                        }
+                        if (detail.getMidtermScore() == null) {
+                            row.createCell(7, CellType.NUMERIC).setBlank();
+                        } else {
+                            row.createCell(7, CellType.NUMERIC).setCellValue(new BigDecimal(String.valueOf(detail.getMidtermScore())).doubleValue());
+                        }
+                        if (detail.getFinalScore() == null) {
+                            row.createCell(8, CellType.NUMERIC).setBlank();
+                        } else {
+                            row.createCell(8, CellType.NUMERIC).setCellValue(new BigDecimal(String.valueOf(detail.getFinalScore())).doubleValue());
+                        }
                     }
                 }
                 Sheet semesterSheet2 = workbook.createSheet("Học kỳ 2");
@@ -89,26 +111,46 @@ public class ScoreFileUtils {
                         row.createCell(1).setCellValue(detail.getStudentId());
                         row.createCell(2, CellType.NUMERIC).setCellValue(detail.getClassroomId());
                         row.createCell(3).setCellValue(detail.getName());
-                        row.createCell(4, CellType.NUMERIC).setBlank();
-                        row.createCell(5, CellType.NUMERIC).setBlank();
-                        row.createCell(6, CellType.NUMERIC).setBlank();
-                        row.createCell(7, CellType.NUMERIC).setBlank();
-                        row.createCell(8, CellType.NUMERIC).setBlank();
+                        if (detail.getRegularScore1() == null) {
+                            row.createCell(4, CellType.NUMERIC).setBlank();
+                        } else {
+                            row.createCell(4, CellType.NUMERIC).setCellValue(new BigDecimal(String.valueOf(detail.getRegularScore1())).doubleValue());
+                        }
+                        if (detail.getRegularScore2() == null) {
+                            row.createCell(5, CellType.NUMERIC).setBlank();
+                        } else {
+                            row.createCell(5, CellType.NUMERIC).setCellValue(new BigDecimal(String.valueOf(detail.getRegularScore2())).doubleValue());
+                        }
+                        if (detail.getRegularScore3() == null) {
+                            row.createCell(6, CellType.NUMERIC).setBlank();
+                        } else {
+                            row.createCell(6, CellType.NUMERIC).setCellValue(new BigDecimal(String.valueOf(detail.getRegularScore3())).doubleValue());
+                        }
+                        if (detail.getMidtermScore() == null) {
+                            row.createCell(7, CellType.NUMERIC).setBlank();
+                        } else {
+                            row.createCell(7, CellType.NUMERIC).setCellValue(new BigDecimal(String.valueOf(detail.getMidtermScore())).doubleValue());
+                        }
+                        if (detail.getFinalScore() == null) {
+                            row.createCell(8, CellType.NUMERIC).setBlank();
+                        } else {
+                            row.createCell(8, CellType.NUMERIC).setCellValue(new BigDecimal(String.valueOf(detail.getFinalScore())).doubleValue());
+                        }
                     }
                 }
-                semesterSheet1.setColumnWidth(3,24 * 256);
+                semesterSheet1.setColumnWidth(3, 24 * 256);
                 semesterSheet1.setColumnWidth(4, 24 * 256);
                 semesterSheet1.setColumnWidth(5, 24 * 256);
                 semesterSheet1.setColumnWidth(6, 24 * 256);
                 semesterSheet1.setColumnWidth(7, 15 * 256);
                 semesterSheet1.setColumnWidth(8, 15 * 256);
-                semesterSheet2.setColumnWidth(3,24 * 256);
+                semesterSheet2.setColumnWidth(3, 24 * 256);
                 semesterSheet2.setColumnWidth(4, 24 * 256);
                 semesterSheet2.setColumnWidth(5, 24 * 256);
                 semesterSheet2.setColumnWidth(6, 24 * 256);
                 semesterSheet2.setColumnWidth(7, 15 * 256);
                 semesterSheet2.setColumnWidth(8, 15 * 256);
-                semesterSheet1.setColumnHidden(0 ,true);
+                semesterSheet1.setColumnHidden(0, true);
                 semesterSheet1.setColumnHidden(1, true);
                 semesterSheet1.setColumnHidden(2, true);
                 semesterSheet2.setColumnHidden(0, true);

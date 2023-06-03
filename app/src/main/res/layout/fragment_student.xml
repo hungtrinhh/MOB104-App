@@ -25,11 +25,11 @@
         android:textSize="20sp"
         android:text="Không có học sinh nào" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcv_student"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:paddingVertical="?android:actionBarSize" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_student"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingVertical="?android:actionBarSize" />
 
 </FrameLayout>

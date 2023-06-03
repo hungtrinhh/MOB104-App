@@ -5,6 +5,7 @@ import android.util.Log;
 import com.btcdteam.easyedu.models.StudentDetail;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -58,40 +59,40 @@ public class StudentScoreReader {
                         while (cellIterator.hasNext()) {
                             Cell cell = cellIterator.next();
 
-                                switch (cell.getColumnIndex()) {
-                                    case 0: // Cột 1 ID
-                                        studentDetail.setId((int) cell.getNumericCellValue());
-                                        break;
-                                    case 1: // Cột 2 mã học sinh
-                                        studentDetail.setStudentId(cell.getStringCellValue());
-                                        break;
-                                    case 2: // Cột 3 mã lớp
-                                        studentDetail.setClassroomId((int) cell.getNumericCellValue());
-                                        break;
-                                    case 3: // Cột 4 họ tên
-                                        studentDetail.setName(cell.getStringCellValue());
-                                        break;
-                                    case 4: // Cột 5 điểm tx 1
-                                        studentDetail.setRegularScore1((float) cell.getNumericCellValue());
-                                        break;
-                                    case 5: // Cột 6 điểm tx 2
-                                        studentDetail.setRegularScore2((float) cell.getNumericCellValue());
-                                        break;
-                                    case 6: // Cột 7 điểm tx 3
-                                        studentDetail.setRegularScore3((float) cell.getNumericCellValue());
-                                        break;
-                                    case 7: // Cột 8 điểm giữa kỳ
-                                        studentDetail.setMidtermScore((float) cell.getNumericCellValue());
-                                        break;
-                                    case 8: // Cột 9 điểm cuối kỳ
-                                        studentDetail.setFinalScore((float) cell.getNumericCellValue());
-                                        break;
-                                    default:
-                                        Log.d(TAG, "Other data");
-                                        break;
-                                }
-                               // Log.d(TAG, cell.getColumnIndex() + " :" + cell.getStringCellValue());
+                            switch (cell.getColumnIndex()) {
+                                case 0: // Cột 1 ID
+                                    studentDetail.setId((int) cell.getNumericCellValue());
+                                    break;
+                                case 1: // Cột 2 mã học sinh
+                                    studentDetail.setStudentId(cell.getStringCellValue());
+                                    break;
+                                case 2: // Cột 3 mã lớp
+                                    studentDetail.setClassroomId((int) cell.getNumericCellValue());
+                                    break;
+                                case 3: // Cột 4 họ tên
+                                    studentDetail.setName(cell.getStringCellValue());
+                                    break;
+                                case 4: // Cột 5 điểm tx 1
+                                    studentDetail.setRegularScore1(cell.getCellType() == CellType.BLANK ? null : (float) cell.getNumericCellValue());
+                                    break;
+                                case 5: // Cột 6 điểm tx 2
+                                    studentDetail.setRegularScore2(cell.getCellType() == CellType.BLANK ? null : (float) cell.getNumericCellValue());
+                                    break;
+                                case 6: // Cột 7 điểm tx 3
+                                    studentDetail.setRegularScore3(cell.getCellType() == CellType.BLANK ? null : (float) cell.getNumericCellValue());
+                                    break;
+                                case 7: // Cột 8 điểm giữa kỳ
+                                    studentDetail.setMidtermScore(cell.getCellType() == CellType.BLANK ? null : (float) cell.getNumericCellValue());
+                                    break;
+                                case 8: // Cột 9 điểm cuối kỳ
+                                    studentDetail.setFinalScore(cell.getCellType() == CellType.BLANK ? null : (float) cell.getNumericCellValue());
+                                    break;
+                                default:
+                                    Log.d(TAG, "Other data");
+                                    break;
                             }
+                            // Log.d(TAG, cell.getColumnIndex() + " :" + cell.getStringCellValue());
+                        }
 
                         list.add(studentDetail);
                         Log.d(TAG, "End Row");

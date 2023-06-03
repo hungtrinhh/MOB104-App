@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.teacher.ClassInfoFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srl_student"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsv_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <include layout="@layout/toolbar"/>
+
+    <include layout="@layout/search_toolbar"
+        android:visibility="gone"/>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/fab_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="64dp"
+        android:src="@drawable/ic_round_add_24"
+        app:fab_addButtonColorNormal="@color/blue_primary"
+        app:fab_expandDirection="up"
+        app:fab_labelStyle="@style/FloatingStyle"
+        app:fab_labelsPosition="left"
+        app:tint="@color/white">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_student_send_feedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/blue_primary"
+            app:fab_icon="@drawable/ic_round_notification_add_24"
+            app:fab_size="mini"
+            app:fab_title="Gửi thông báo lớp" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_student_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/blue_primary"
+            app:fab_icon="@drawable/ic_round_person_add_alt_1_24"
+            app:fab_size="mini"
+            app:fab_title="Thêm học sinh thủ công" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_student_add_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/dark_green"
+            app:fab_icon="@drawable/ic_xls_file"
+            app:fab_size="mini"
+            app:fab_title="Thêm học sinh bằng file xls" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_import_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/dark_green"
+            app:fab_icon="@drawable/ic_xls_file"
+            app:fab_size="mini"
+            app:fab_title="Nhập điểm qua file" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_export_form"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/dark_green"
+            app:fab_icon="@drawable/ic_xls_file"
+            app:fab_size="mini"
+            app:fab_title="Xuất bảng điểm" />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_bot_nav"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:padding="8dp"
+        android:elevation="20dp">
+
+        <FrameLayout
+            android:id="@+id/student_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <View
+                android:id="@+id/bg_student"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_score"/>
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:src="@drawable/ic_student_nav"
+                android:layout_gravity="center"
+                android:padding="12dp"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/parent_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <View
+                android:id="@+id/bg_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_score"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:src="@drawable/ic_parent_nav"
+                android:layout_gravity="center"
+                android:padding="12dp"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -85,6 +85,7 @@ public class StudentListReader {
                                         parent.setPhone(parentMap.get(cell.getStringCellValue()).getPhone());
                                         parent.setId(parentMap.get(cell.getStringCellValue()).getId());
                                     }
+                                    student.setParentPhone(parent.getPhone());
                                     break;
                                 default:
                                     Log.d(TAG, "Other data");

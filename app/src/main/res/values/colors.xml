@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bg_primary">#E4F1F8</color>
     <color name="blue_primary">#3787FF</color>
+    <color name="dark_green">#2E7D32</color>
+    <color name="warning">#FF8F00</color>
+    <color name="caution">#D50000</color>
 </resources>

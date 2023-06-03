@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_parent">
-
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_parent"
+    app:startDestination="@id/viewStudentFragment">
+    <fragment
+        android:id="@+id/viewStudentFragment"
+        android:name="com.btcdteam.easyedu.fragments.parent.ViewStudentFragment"
+        android:label="ViewStudentFragment" >
+        <action
+            android:id="@+id/action_viewStudentFragment_to_studentDetailFragment"
+            app:destination="@id/studentDetailFragment2"
+            app:enterAnim="@anim/anim_dialogx_right_enter"
+            app:exitAnim="@anim/anim_dialogx_left_exit"
+            app:popEnterAnim="@anim/anim_dialogx_left_enter"
+            app:popExitAnim="@anim/anim_dialogx_right_exit"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_viewStudentFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.btcdteam.easyedu.fragments.parent.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/studentDetailFragment2"
+        android:name="com.btcdteam.easyedu.fragments.parent.StudentDetailFragment"
+        android:label="fragment_student_detail"
+        tools:layout="@layout/fragment_student_detail" >
+        <action
+            android:id="@+id/action_studentDetailFragment2_to_notificationFragment"
+            app:destination="@id/notificationFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
 </navigation>

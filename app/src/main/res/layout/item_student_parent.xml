@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="40dp">
+
+    <LinearLayout
+        android:id="@+id/item_parent_student"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:selectableItemBackground"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:src="@drawable/ic_student" />
+
+            <TextView
+                android:id="@+id/tv_parent_student_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_weight="1"
+                android:ellipsize="middle"
+                android:maxLines="1"
+                android:text="Lop 6A9"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_student_parent_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:maxLines="1"
+            android:text="Mon hoc"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_label_student_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:maxLines="1"
+                android:text="Trạng thái:"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_student_parent_status"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_toEndOf="@id/tv_label_student_status"
+                android:background="@drawable/bg_score"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:paddingVertical="11dp"
+                android:text="Đang học"
+                android:textColor="@color/warning"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/tv_student_parent_avg_score"
+                android:maxLines="1"
+                android:text="Điểm trung bình:"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_student_parent_avg_score"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/bg_score"
+                android:paddingVertical="11dp"
+                android:text="0.0"
+                android:textAlignment="center"
+                android:textColor="@color/blue_primary"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

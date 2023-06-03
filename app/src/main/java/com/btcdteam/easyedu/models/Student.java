@@ -9,6 +9,8 @@ public class Student {
     private String name;
     private String gender;
     private String dob;
+    @SerializedName("parent_phone")
+    private String parentPhone;
     @SerializedName("parent_id")
     private String parentId;
 
@@ -18,6 +20,14 @@ public class Student {
         this.gender = gender;
         this.dob = dob;
         this.parentId = parentId;
+    }
+
+    public String getParentPhone() {
+        return parentPhone;
+    }
+
+    public void setParentPhone(String parentPhone) {
+        this.parentPhone = parentPhone;
     }
 
     public Student() {
