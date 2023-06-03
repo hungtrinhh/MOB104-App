@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="1, 2"
+    android:id="@+id/item_preview">
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/tv_preview_student_name"
+            android:layout_column="1"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:text="Nguyễn Ngọc Lan Anh"
+            android:maxEms="7"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_preview_parent_name"
+            android:layout_column="2"
+            android:padding="8dp"
+            android:maxEms="7"
+            android:textAlignment="center"
+            android:text="Nguyễn Huỳnh Quốc"
+            android:textColor="@color/black" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/tv_preview_student_dob"
+            android:layout_column="1"
+            android:padding="8dp"
+            android:text="24/3/2003"
+            android:maxEms="7"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_preview_parent_phone_number"
+            android:layout_column="2"
+            android:padding="8dp"
+            android:maxEms="7"
+            android:text="097377728888"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+    </TableRow>
+
+    <View android:layout_height="1dp"
+        android:background="@color/black"/>
+
+</TableLayout>
