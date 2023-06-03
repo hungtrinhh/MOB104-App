@@ -1,3 +1,2 @@
-# MOB104-App
-Quản lý dự án 
-Nhóm 6 
+# EasyEdu-Android-App
+EasyEdu mobile app

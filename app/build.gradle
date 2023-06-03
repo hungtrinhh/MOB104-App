@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -26,13 +27,21 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    allprojects {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:deprecation"
+        }
+    }
 }
 
 dependencies {
     implementation files('libs/poishadow-all.jar')
+    implementation 'com.google.firebase:firebase-messaging:23.1.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     def dialogx_version = "0.0.46"
     def nav_version = "2.5.3"
 
+    implementation 'com.getbase:floatingactionbutton:1.10.1'
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
     implementation "com.github.kongzue.DialogX:DialogX:${dialogx_version}"
