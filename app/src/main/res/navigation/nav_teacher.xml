@@ -1,6 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_teacher">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_teacher"
+    app:startDestination="@id/viewClassFragment">
 
+    <fragment
+        android:id="@+id/viewClassFragment"
+        android:name="com.btcdteam.easyedu.fragments.teacher.ViewClassFragment"
+        android:label="fragment_view_class"
+        tools:layout="@layout/fragment_view_class">
+        <action
+            android:id="@+id/action_viewClassFragment_to_classInfoFragment"
+            app:destination="@id/classInfoFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_viewClassFragment_to_createClassFragment"
+            app:destination="@id/createClassFragment"
+            app:enterAnim="@anim/anim_dialogx_right_enter"
+            app:exitAnim="@anim/anim_dialogx_left_exit"
+            app:popEnterAnim="@anim/anim_dialogx_left_enter"
+            app:popExitAnim="@anim/anim_dialogx_right_exit" />
+        <action
+            android:id="@+id/action_viewClassFragment_to_accountInfoFragment"
+            app:destination="@id/accountInfoFragment"
+            app:enterAnim="@anim/anim_dialogx_right_enter"
+            app:exitAnim="@anim/anim_dialogx_left_exit"
+            app:popEnterAnim="@anim/anim_dialogx_left_enter"
+            app:popExitAnim="@anim/anim_dialogx_right_exit" />
+        <action
+            android:id="@+id/action_viewClassFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment"
+            app:enterAnim="@anim/anim_dialogx_right_enter"
+            app:exitAnim="@anim/anim_dialogx_left_exit"
+            app:popEnterAnim="@anim/anim_dialogx_left_enter"
+            app:popExitAnim="@anim/anim_dialogx_right_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/classInfoFragment"
+        android:name="com.btcdteam.easyedu.fragments.teacher.ClassInfoFragment"
+        android:label="fragment_class_info"
+        tools:layout="@layout/fragment_class_info">
+        <action
+            android:id="@+id/action_classInfoFragment_to_studentDetailsFragment"
+            app:destination="@id/studentDetailsFragment"
+            app:enterAnim="@anim/anim_dialogx_right_enter"
+            app:exitAnim="@anim/anim_dialogx_left_exit"
+            app:popEnterAnim="@anim/anim_dialogx_left_enter"
+            app:popExitAnim="@anim/anim_dialogx_right_exit" />
+        <action
+            android:id="@+id/action_classInfoFragment_to_addFileXlsFragment2"
+            app:destination="@id/addFileXlsFragment2"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_classInfoFragment_to_editStudentFragment"
+            app:destination="@id/editStudentFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_classInfoFragment_to_feedbackFragment"
+            app:destination="@id/feedbackFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_classInfoFragment_to_importScoreFragment"
+            app:destination="@id/importScoreFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_classInfoFragment_to_feedbackOfOneStudentFragment"
+            app:destination="@id/feedbackOfOneStudentFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/createClassFragment"
+        android:name="com.btcdteam.easyedu.fragments.teacher.CreateClassFragment"
+        android:label="fragment_create_class"
+        tools:layout="@layout/fragment_create_class" />
+    <fragment
+        android:id="@+id/studentDetailsFragment"
+        android:name="com.btcdteam.easyedu.fragments.teacher.StudentDetailsFragment"
+        android:label="fragment_student_details"
+        tools:layout="@layout/fragment_student_details">
+        <action
+            android:id="@+id/action_studentDetailsFragment_to_editStudentFragment"
+            app:destination="@id/editStudentFragment"
+            app:enterAnim="@anim/anim_dialogx_right_enter"
+            app:exitAnim="@anim/anim_dialogx_left_exit"
+            app:popEnterAnim="@anim/anim_dialogx_left_enter"
+            app:popExitAnim="@anim/anim_dialogx_right_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFileXlsFragment2"
+        android:name="com.btcdteam.easyedu.fragments.teacher.AddFileXlsFragment"
+        android:label="fragment_add_file_xls"
+        tools:layout="@layout/fragment_add_file_xls" />
+    <fragment
+        android:id="@+id/editStudentFragment"
+        android:name="com.btcdteam.easyedu.fragments.teacher.EditStudentFragment"
+        android:label="fragment_edit_student"
+        tools:layout="@layout/fragment_edit_student" />
+    <fragment
+        android:id="@+id/accountInfoFragment"
+        android:name="com.btcdteam.easyedu.fragments.teacher.AccountInfoFragment"
+        android:label="fragment_account_info"
+        tools:layout="@layout/fragment_account_info" />
+    <fragment
+        android:id="@+id/feedbackFragment"
+        android:name="com.btcdteam.easyedu.fragments.teacher.FeedbackFragment"
+        android:label="fragment_feedback"
+        tools:layout="@layout/fragment_feedback" />
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.btcdteam.easyedu.fragments.teacher.ChangePasswordFragment"
+        android:label="ChangePasswordFragment"/>
+    <fragment
+        android:id="@+id/importScoreFragment"
+        android:name="com.btcdteam.easyedu.fragments.teacher.ImportScoreFragment"
+        android:label="fragment_import_score"
+        tools:layout="@layout/fragment_import_score" />
+    <fragment
+        android:id="@+id/feedbackOfOneStudentFragment"
+        android:name="com.btcdteam.easyedu.fragments.teacher.FeedbackOfOneStudentFragment"
+        android:label="fragment_feedback_of_one_student"
+        tools:layout="@layout/fragment_feedback_of_one_student">
+        <action
+            android:id="@+id/action_feedbackOfOneStudentFragment_to_feedbackFragment"
+            app:destination="@id/feedbackFragment"
+            app:enterAnim="@anim/anim_dialogx_right_enter"
+            app:exitAnim="@anim/anim_dialogx_left_exit"
+            app:popEnterAnim="@anim/anim_dialogx_left_enter"
+            app:popExitAnim="@anim/anim_dialogx_right_exit" />
+        <action
+            android:id="@+id/action_feedbackOfOneStudentFragment_to_studentDetailsFragment"
+            app:destination="@id/studentDetailsFragment" />
+    </fragment>
 </navigation>
