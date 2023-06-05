@@ -1,4 +1,4 @@
-package com.btcdteam.easyedu.fragments.teacher;
+package com.btcdteam.easyedu.fragments.auth.teacher;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -41,12 +41,12 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.btcdteam.easyedu.R;
 import com.btcdteam.easyedu.adapter.teacher.ViewPagerAdapter;
 import com.btcdteam.easyedu.apis.ServerAPI;
+import com.btcdteam.easyedu.fragments.teacher.subfragment.StudentFragment;
 import com.btcdteam.easyedu.models.StudentDetail;
 import com.btcdteam.easyedu.network.APIService;
 import com.btcdteam.easyedu.utils.FileUtils;
 import com.btcdteam.easyedu.utils.ProgressBarDialog;
 import com.btcdteam.easyedu.utils.ScoreFileUtils;
-import com.btcdteam.easyedu.utils.SnackbarUntil;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.google.android.material.snackbar.Snackbar;
@@ -141,10 +141,6 @@ public class ClassInfoFragment extends Fragment implements SwipeRefreshLayout.On
         bundle.putInt("classroom_id", getArguments() != null ? getArguments().getInt("classroom_id") : 0);
 
         fabSendFeedback.setOnClickListener(v -> {
-            if (studentDetailList == null || studentDetailList.size() == 0) {
-                SnackbarUntil.showWarning(requireView(), "Không có học sinh nào!");
-                return;
-            }
             fabMenu.collapse();
             Navigation.findNavController(requireActivity(), R.id.nav_host_teacher).navigate(R.id.action_classInfoFragment_to_feedbackFragment, bundle);
         });
@@ -154,10 +150,6 @@ public class ClassInfoFragment extends Fragment implements SwipeRefreshLayout.On
             Navigation.findNavController(requireActivity(), R.id.nav_host_teacher).navigate(R.id.action_classInfoFragment_to_editStudentFragment, bundle);
         });
         fabExportForm.setOnClickListener(v -> {
-            if (studentDetailList == null || studentDetailList.size() == 0) {
-                SnackbarUntil.showWarning(requireView(), "Không có học sinh nào!");
-                return;
-            }
             fabMenu.collapse();
             Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
             intent.addCategory(Intent.CATEGORY_OPENABLE);
@@ -171,10 +163,6 @@ public class ClassInfoFragment extends Fragment implements SwipeRefreshLayout.On
             Navigation.findNavController(requireActivity(), R.id.nav_host_teacher).navigate(R.id.action_classInfoFragment_to_addFileXlsFragment2, bundle);
         });
         fabImportScore.setOnClickListener(v -> {
-            if (studentDetailList == null || studentDetailList.size() == 0) {
-                SnackbarUntil.showWarning(requireView(), "Không có học sinh nào!");
-                return;
-            }
             fabMenu.collapse();
             Navigation.findNavController(requireActivity(), R.id.nav_host_teacher).navigate(R.id.action_classInfoFragment_to_importScoreFragment, bundle);
         });
