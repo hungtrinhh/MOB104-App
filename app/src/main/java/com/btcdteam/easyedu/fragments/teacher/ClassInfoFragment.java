@@ -1,4 +1,4 @@
-package com.btcdteam.easyedu.fragments.auth.teacher;
+package com.btcdteam.easyedu.fragments.teacher;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

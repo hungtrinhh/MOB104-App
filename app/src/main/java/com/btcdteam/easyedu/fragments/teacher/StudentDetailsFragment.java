@@ -1,4 +1,4 @@
-package com.btcdteam.easyedu.fragments.auth.teacher;
+package com.btcdteam.easyedu.fragments.teacher;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;

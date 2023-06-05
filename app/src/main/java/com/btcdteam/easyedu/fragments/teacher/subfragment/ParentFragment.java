@@ -1,4 +1,4 @@
-package com.btcdteam.easyedu.fragments.auth.teacher.subfragment;
+package com.btcdteam.easyedu.fragments.teacher.subfragment;
 
 import android.content.Context;
 import android.content.SharedPreferences;

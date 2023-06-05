@@ -1,4 +1,4 @@
-package com.btcdteam.easyedu.fragments.auth.teacher;
+package com.btcdteam.easyedu.fragments.teacher;
 
 import static android.content.Context.MODE_PRIVATE;
 

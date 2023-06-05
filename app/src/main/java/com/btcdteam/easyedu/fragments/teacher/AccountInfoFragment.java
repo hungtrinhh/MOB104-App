@@ -1,4 +1,4 @@
-package com.btcdteam.easyedu.fragments.auth.teacher;
+package com.btcdteam.easyedu.fragments.teacher;
 
 import android.content.Intent;
 import android.os.Bundle;
