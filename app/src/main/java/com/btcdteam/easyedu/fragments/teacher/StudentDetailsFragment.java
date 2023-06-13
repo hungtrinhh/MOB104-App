@@ -22,6 +22,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.btcdteam.easyedu.R;
 import com.btcdteam.easyedu.apis.GoogleAPI;
@@ -50,7 +51,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class StudentDetailsFragment extends Fragment {
-    private ImageView btnBack, btnSendFeedback;
+    private ImageView btnBack, btnSendFeedback, btnStudentEdit;
     private ProgressBarDialog progressBarDialog;
 
     private TextView tvStudentName,
@@ -75,7 +76,7 @@ public class StudentDetailsFragment extends Fragment {
     private Button btnDeleteStudent;
     private List<StudentDetail> studentDetails;
     private StudentDetail studentDetails1, studentDetails2;
-    private String studentId, studentName;
+    private String studentId;
     private int classId;
     private int teacherId;
     private String parentFcmToken = null;
@@ -94,10 +95,10 @@ public class StudentDetailsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         btnBack = view.findViewById(R.id.img_class_detail_back);
+        btnStudentEdit = view.findViewById(R.id.img_student_detail_edit);
         studentDetails = new ArrayList<>();
         studentId = getArguments().getString("studentId");
         classId = getArguments().getInt("classRoomId");
-        studentName = getArguments().getString("studentName");
 
         //student
         tvStudentName = view.findViewById(R.id.tv_student_detail_name);
@@ -133,9 +134,15 @@ public class StudentDetailsFragment extends Fragment {
         btnBack.setOnClickListener(v -> {
             requireActivity().onBackPressed();
         });
-
+        btnStudentEdit.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+            bundle.putInt("type", 1);
+            bundle.putInt("classroom_id", classId);
+            bundle.putString("student_id", studentId);
+            Navigation.findNavController(requireActivity(), R.id.nav_host_teacher).navigate(R.id.action_studentDetailsFragment_to_editStudentFragment, bundle);
+        });
         btnDeleteStudent.setOnClickListener(v -> {
-            new MessageDialog("Xóa học sinh", "Bạn có muốn xóa học sinh: " + studentName + " không ?", "Có", "Không")
+            new MessageDialog("Xóa học sinh", "Bạn có muốn xóa học sinh: " + studentDetails1.getName() + " không ?", "Có", "Không")
                     .setButtonOrientation(LinearLayout.HORIZONTAL)
                     .setOkButton(new OnDialogButtonClickListener<MessageDialog>() {
                         @Override

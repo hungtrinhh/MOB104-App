@@ -131,7 +131,8 @@
         android:id="@+id/feedbackOfOneStudentFragment"
         android:name="com.btcdteam.easyedu.fragments.teacher.FeedbackOfOneStudentFragment"
         android:label="fragment_feedback_of_one_student"
-        tools:layout="@layout/fragment_feedback_of_one_student" >
+        tools:layout="@layout/fragment_feedback_of_one_student">
+
         <action
             android:id="@+id/action_feedbackOfOneStudentFragment_to_feedbackFragment"
             app:destination="@id/feedbackFragment"
@@ -139,5 +140,8 @@
             app:exitAnim="@anim/anim_dialogx_left_exit"
             app:popEnterAnim="@anim/anim_dialogx_left_enter"
             app:popExitAnim="@anim/anim_dialogx_right_exit" />
+        <action
+            android:id="@+id/action_feedbackOfOneStudentFragment_to_studentDetailsFragment"
+            app:destination="@id/studentDetailsFragment" />
     </fragment>
 </navigation>
