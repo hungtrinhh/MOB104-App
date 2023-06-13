@@ -49,10 +49,19 @@
             android:id="@+id/tv_feedback_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Danh sách trạng thái phụ huynh"
+            android:text="Trạng thái phụ huynh"
             android:textColor="@color/blue_primary"
             android:textSize="22sp"
             android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_feedback_option"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_gravity="end"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:padding="12dp"
+            android:src="@drawable/ic_action_setting" />
     </androidx.appcompat.widget.Toolbar>
 
 </FrameLayout>
