@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/cb_parent_check"
+        app:cardCornerRadius="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/item_feedback"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_feedback_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tên phụ huynh"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_feedback_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Phone" />
+
+                <TextView
+                    android:id="@+id/tv_feedback_student"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Student" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_feedback_call"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:src="@drawable/ic_outline_call_24"
+                app:tint="@color/blue_primary" />
+
+            <ImageView
+                android:id="@+id/img_feedback_sms"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginEnd="8dp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:src="@drawable/ic_outline_sms_24"
+                app:tint="@color/blue_primary" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cb_parent_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:buttonTint="@color/blue_primary" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

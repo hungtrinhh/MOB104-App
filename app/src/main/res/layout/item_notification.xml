@@ -37,9 +37,12 @@
         <TextView
             android:id="@+id/tv_noti_content"
             android:textSize="16sp"
+            android:linksClickable="true"
+            android:autoLink="all"
+            android:textColorLink="@color/blue_primary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nội dung thông báo"/>
+            android:text="Nội dung thông báo" />
 
     </LinearLayout>
 

@@ -30,6 +30,7 @@ import com.btcdteam.easyedu.models.Student;
 import com.btcdteam.easyedu.network.APIService;
 import com.btcdteam.easyedu.utils.FileUtils;
 import com.btcdteam.easyedu.utils.ProgressBarDialog;
+import com.btcdteam.easyedu.utils.SnackbarUntil;
 import com.btcdteam.easyedu.utils.StudentListReader;
 import com.btcdteam.easyedu.utils.SyncBody;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -130,12 +131,16 @@ public class AddFileXlsFragment extends Fragment {
                 new StudentListReader(filePath, new StudentListReader.HandleOnComplete() {
                     @Override
                     public void onComplete(List<Student> students, Map<String, Parent> parentMapResult) {
+                        progressBarDialog.dismiss();
+                        if (students.get(0).getParentId() == null) {
+                            SnackbarUntil.showError(requireView(), "Tập tin đưa vào không hợp lệ, vui lòng kiểm tra lại định dạng!");
+                            return;
+                        }
                         parentList = new ArrayList<>(parentMapResult.values());
                         studentList = students;
                         adapter = new PreviewAdapter(students, parentMapResult);
                         rcv.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false));
                         rcv.setAdapter(adapter);
-                        progressBarDialog.dismiss();
                         tvPreviewStudentCount.setText("Học sinh: " + students.size());
                         tvPreviewParentCount.setText("Phụ huynh: " + parentMapResult.size());
                     }

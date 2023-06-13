@@ -29,7 +29,6 @@ import com.btcdteam.easyedu.apis.ServerAPI;
 import com.btcdteam.easyedu.models.StudentDetail;
 import com.btcdteam.easyedu.network.APIService;
 import com.google.gson.JsonObject;
-import com.kongzue.dialogx.dialogs.BottomMenu;
 import com.kongzue.dialogx.dialogs.MessageDialog;
 import com.kongzue.dialogx.interfaces.OnDialogButtonClickListener;
 
@@ -159,8 +158,6 @@ public class StudentFragment extends Fragment implements StudentAdapter.StudentI
         Bundle bundle = new Bundle();
         bundle.putString("studentId", student.getStudentId());
         bundle.putInt("classRoomId", student.getClassroomId());
-        bundle.putInt("position", position);
-        bundle.putString("studentName", student.getName());
         Navigation.findNavController(requireActivity(), R.id.nav_host_teacher).navigate(R.id.action_classInfoFragment_to_studentDetailsFragment, bundle);
     }
 
@@ -209,11 +206,12 @@ public class StudentFragment extends Fragment implements StudentAdapter.StudentI
                 switch (item.getItemId()) {
                     case R.id.student_udpate:
                         updateStudent(student);
-                        BottomMenu.cleanAll();
                         return true;
                     case R.id.student_list_feedback:
-                        Navigation.findNavController(requireActivity(), R.id.nav_host_teacher).navigate(R.id.action_classInfoFragment_to_feedbackFragment);
-                        BottomMenu.cleanAll();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("student_id", student.getStudentId());
+                        bundle.putInt("classroom_id", student.getClassroomId());
+                        Navigation.findNavController(requireActivity(), R.id.nav_host_teacher).navigate(R.id.action_classInfoFragment_to_feedbackOfOneStudentFragment, bundle);
                         return true;
                     case R.id.student_delete:
                         MessageDialog messageDialog = new MessageDialog("Xóa học sinh", "Bạn có muốn xóa học sinh: " + student.getName() + " Không ?", "Có", "Không")

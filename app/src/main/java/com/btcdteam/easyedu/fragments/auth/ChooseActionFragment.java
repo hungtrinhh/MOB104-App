@@ -41,6 +41,7 @@ import com.kongzue.dialogx.dialogs.MessageDialog;
 import com.kongzue.dialogx.interfaces.OnDialogButtonClickListener;
 
 import java.lang.reflect.Type;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -143,11 +144,11 @@ public class ChooseActionFragment extends Fragment {
                     @Override
                     public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                         if (response.code() == 200) {
-                            Type userListType = new TypeToken<Parent>() {
+                            Type userListType = new TypeToken<List<Parent>>() {
                             }.getType();
-                            Parent parent = new Gson().fromJson(response.body().getAsJsonObject("data"), userListType);
-                            sharedPreferencesParent(role, parent.getId(), parent.getName(), parent.getEmail(), parent.getPhone(), parent.getDob(), parent.getFcmToken());
-                            Toast.makeText(getContext(), "Hi: " + parent.getName(), Toast.LENGTH_SHORT).show();
+                            List<Parent> parent = new Gson().fromJson(response.body().getAsJsonArray("data"), userListType);
+                            sharedPreferencesParent(role, parent.get(0).getId(), parent.get(0).getName(), parent.get(0).getEmail(), parent.get(0).getPhone(), parent.get(0).getDob(), parent.get(0).getFcmToken());
+                            Toast.makeText(getContext(), "Hi: " + parent.get(0).getName(), Toast.LENGTH_LONG).show();
                             requireActivity().startActivity(new Intent(requireActivity(), ParentActivity.class));
                             requireActivity().finish();
                         } else if (response.code() == 404) {
@@ -155,6 +156,7 @@ public class ChooseActionFragment extends Fragment {
                         } else {
                             Toast.makeText(getContext(), "Đăng nhập thấy bại", Toast.LENGTH_SHORT).show();
                         }
+                        mGoogleSignInClient.signOut();
                     }
 
                     @Override

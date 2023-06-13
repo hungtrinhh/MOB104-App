@@ -23,7 +23,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.btcdteam.easyedu.R;
-import com.btcdteam.easyedu.adapter.teacher.StudentAdapter;
+import com.btcdteam.easyedu.adapter.teacher.ScorePreviewAdapter;
 import com.btcdteam.easyedu.apis.ServerAPI;
 import com.btcdteam.easyedu.models.StudentDetail;
 import com.btcdteam.easyedu.network.APIService;
@@ -168,7 +168,7 @@ public class ImportScoreFragment extends Fragment {
                                 Snackbar.make(requireView(), "Bảng điểm bạn chọn không thuộc lớp này!", Toast.LENGTH_SHORT).setBackgroundTint(getResources().getColor(R.color.caution, requireActivity().getTheme())).show();
                                 return;
                             }
-                            StudentAdapter studentDetailAdapter = new StudentAdapter(studentDetails, null);
+                            ScorePreviewAdapter studentDetailAdapter = new ScorePreviewAdapter(requireActivity(), studentDetails);
                             rcvAddFile.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false));
                             rcvAddFile.setAdapter(studentDetailAdapter);
                             list = studentDetails;
