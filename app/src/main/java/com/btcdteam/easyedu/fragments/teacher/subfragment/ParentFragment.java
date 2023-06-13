@@ -56,10 +56,10 @@ public class ParentFragment extends Fragment implements ParentAdapter.ParentItem
         SharedPreferences preferences = requireContext().getSharedPreferences("CLASSROOM_ID", Context.MODE_PRIVATE);
         int classroomId = preferences.getInt("classroomId", 0);
 
-        Call<JsonObject> call = ServerAPI.getInstance().create(APIService.class).getListParentByIdClassRoom(classroomId);
+        retrofit2.Call<JsonObject> call = ServerAPI.getInstance().create(APIService.class).getListParentByIdClassRoom(classroomId);
         call.enqueue(new Callback<JsonObject>() {
             @Override
-            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+            public void onResponse(retrofit2.Call<JsonObject> call, Response<JsonObject> response) {
                 if (response.code() == 200) {
                     Type type = new TypeToken<List<Parent>>() {
                     }.getType();
