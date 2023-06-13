@@ -80,6 +80,9 @@ public interface APIService {
     @POST("auth/change-password")
     Call<JsonObject> changePassword(@Body JsonObject teacher);
 
+    @PATCH("parent/changePassword/{id}")
+    Call<JsonObject> changePasswordParent(@Path("id") String id, @Body JsonObject parent);
+
     @GET("student/{studentId}/{classroomId}")
     Call<JsonObject> getStudentById(@Path("studentId") String studentId, @Path("classroomId") int ClassroomId);
 
@@ -91,6 +94,9 @@ public interface APIService {
 
     @PATCH("parent")
     Call<JsonObject> updateParent(@Body Parent parent);
+
+    @PATCH("parent")
+    Call<JsonObject> updateParent(@Body JsonObject parent);
 
     @POST("feedback")
     Call<JsonObject> sendFeedback(@Body Feedback feedback);

@@ -22,7 +22,6 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
 
-import com.btcdteam.easyedu.BuildConfig;
 import com.btcdteam.easyedu.R;
 import com.kongzue.dialogx.dialogs.MessageDialog;
 import com.kongzue.dialogx.interfaces.OnDialogButtonClickListener;

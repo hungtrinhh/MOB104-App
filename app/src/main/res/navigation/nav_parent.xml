@@ -22,6 +22,18 @@
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
             app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_viewStudentFragment_to_parentInfoFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/parentInfoFragment"
+            app:popExitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_viewStudentFragment_to_parentChangePassword"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/parentChangePassword"
+            app:popExitAnim="@android:anim/fade_out"/>
     </fragment>
     <fragment
         android:id="@+id/notificationFragment"
@@ -40,4 +52,12 @@
             app:exitAnim="@android:anim/fade_out"
             app:popExitAnim="@android:anim/fade_out" />
     </fragment>
+    <fragment
+        android:id="@+id/parentInfoFragment"
+        android:name="com.btcdteam.easyedu.fragments.parent.ParentInfoFragment"
+        android:label="ParentInfoFragment" />
+    <fragment
+        android:id="@+id/parentChangePassword"
+        android:name="com.btcdteam.easyedu.fragments.parent.ParentChangePassword"
+        android:label="ParentChangePassword" />
 </navigation>

@@ -73,6 +73,12 @@
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
             app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_classInfoFragment_to_feedbackOfOneStudentFragment"
+            app:destination="@id/feedbackOfOneStudentFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/createClassFragment"
@@ -121,4 +127,17 @@
         android:name="com.btcdteam.easyedu.fragments.teacher.ImportScoreFragment"
         android:label="fragment_import_score"
         tools:layout="@layout/fragment_import_score" />
+    <fragment
+        android:id="@+id/feedbackOfOneStudentFragment"
+        android:name="com.btcdteam.easyedu.fragments.teacher.FeedbackOfOneStudentFragment"
+        android:label="fragment_feedback_of_one_student"
+        tools:layout="@layout/fragment_feedback_of_one_student" >
+        <action
+            android:id="@+id/action_feedbackOfOneStudentFragment_to_feedbackFragment"
+            app:destination="@id/feedbackFragment"
+            app:enterAnim="@anim/anim_dialogx_right_enter"
+            app:exitAnim="@anim/anim_dialogx_left_exit"
+            app:popEnterAnim="@anim/anim_dialogx_left_enter"
+            app:popExitAnim="@anim/anim_dialogx_right_exit" />
+    </fragment>
 </navigation>
